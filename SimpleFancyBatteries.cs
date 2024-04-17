@@ -54,28 +54,19 @@ public Program()
     ThatsMe = Me;
     _prog = this;
     Runtime.UpdateFrequency = UpdateFrequency.Update100;
-
     Echo(":-> Booting\n");
- 
     DoScan(); // if grid changes you need to reboot
-
 }
-
 public void Main(string argument, UpdateType updateSource)
 {
-
     Echo(ScriptTag + " ... Running " + VERSION + "\n");
     Echo(Message);
-
     if (Setupdone) {Message=""; DoLoop();}
     printOnPB(ThatsMe,Message);
-
 }
-
 public void DoLoop()
 {
     Message="";
-
     TotalCurrentStoredPower=0; 
     TotalMaxStoredPower=0; 
     TotalCurrentInput=0; 
@@ -85,10 +76,10 @@ public void DoLoop()
     // Get the combined Powers 
     for (int i = 0; i < Batteries.Count; i++)  
     {    
-	    TotalCurrentStoredPower  += Batteries[i].CurrentStoredPower; 
-		TotalMaxStoredPower += Batteries[i].MaxStoredPower; 
-		TotalCurrentInput +=  Batteries[i].CurrentInput; 
-		TotalCurrentOutput += Batteries[i].CurrentOutput; 
+	TotalCurrentStoredPower  += Batteries[i].CurrentStoredPower; 
+	TotalMaxStoredPower += Batteries[i].MaxStoredPower; 
+	TotalCurrentInput +=  Batteries[i].CurrentInput; 
+	TotalCurrentOutput += Batteries[i].CurrentOutput; 
     }  
 
     Message = "StorePower: " + (TotalCurrentStoredPower*1000).ToString("###0") + "/" + (TotalMaxStoredPower*1000).ToString("###0") +"\n";
