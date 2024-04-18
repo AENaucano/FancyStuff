@@ -210,6 +210,5 @@ public string GetCustomDataTag(IMyTerminalBlock thisBlock, string _thisTag)
 		}
 	}
     // nothing found
-	return "";
-}  
-à
+return "";
+}
