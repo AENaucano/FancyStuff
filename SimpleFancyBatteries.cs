@@ -114,7 +114,6 @@ public void DoScan()
     else { Message = Batteries.Count().ToString() + " batteries found\n"; }
 
     //TBs
-    Timers.Clear();
     List<IMyTimerBlock> TBBlocks = new List<IMyTimerBlock>();
     // MyGrid.GetBlocksOfType<IMyBatteryBlock>(BatBlocks, Bblock => Bblock.IsSameConstructAs(ThatsMe));
     MyGrid.GetBlocksOfType(TBBlocks, ThatsMe_Grid);
@@ -123,11 +122,11 @@ public void DoScan()
     {
 		if (DoesNameHasTag(TimerTag,TBBlocks[tidx].CustomName))
 		{
-			if (TB25 == null) { TB25=TBBlocks[tidx]; SetupTimer(TB25); continue;}
-			if (TB50 == null) { TB50=TBBlocks[tidx]; SetupTimer(TB50); continue; }
-			if (TB75 == null) { TB75=TBBlocks[tidx]; SetupTimer(TB75); continue; }
-			if (TB100 == null) { TB100=TBBlocks[tidx]; SetupTimer(TB100); continue; }
-			if (TBoff == null) { TBoff=TBBlocks[tidx]; SetupTimer(TBoff); continue; }
+			if (TB25 == null) { TB25=TBBlocks[tidx]; SetupTimer("TB25"); continue;}
+			if (TB50 == null) { TB50=TBBlocks[tidx]; SetupTimer("TB50"); continue; }
+			if (TB75 == null) { TB75=TBBlocks[tidx]; SetupTimer("TB75"); continue; }
+			if (TB100 == null) { TB100=TBBlocks[tidx]; SetupTimer("TB100"); continue; }
+			if (TBoff == null) { TBoff=TBBlocks[tidx]; SetupTimer("TBoff"); continue; }
 		}
     }
 
@@ -135,26 +134,26 @@ public void DoScan()
     else { Message += Timers.Count().ToString() + " Timers have been setup\n if grid changes you need to reboot\n";Setupdone = true; }
     return;
 }
-public void SetupTimer(IMyTimerBlock blok)
+public void SetupTimer(string blok)
 {
 	switch(blok) {
-	case TB25:
+	case "TB25":
 		CheckCustomData(TB25, TB25_Tag);
 		if (!DoesNameHasTag(TB25.CustomName, TimerTag)) { TB25.CustomName += TimerTag;}
 		break;
-	case TB50:
+	case "TB50":
 		CheckCustomData(TB50, TB50_Tag);
 		if (!DoesNameHasTag(TB50.CustomName, TimerTag)) { TB50.CustomName += TimerTag;}
 		break;
-	case TB75:
+	case "TB75":
 		CheckCustomData(TB75, TB75_Tag);
 		if (!DoesNameHasTag(TB75.CustomName, TimerTag)) { TB75.CustomName += TimerTag;}
 		break;
-	case TB100:
+	case "TB100":
 		CheckCustomData(TB100, TB100_Tag);
 		if (!DoesNameHasTag(TB100.CustomName, TimerTag)) { TB100.CustomName += TimerTag;}
 		break;
-	case TBoff:
+	case "TBoff":
 		CheckCustomData(TBoff, TBoff_Tag);
 		if (!DoesNameHasTag(TBoff.CustomName, TimerTag)) { TBoff.CustomName += TimerTag;}
 		break;
