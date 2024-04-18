@@ -130,8 +130,8 @@ public void DoScan()
 		}
     }
 
-    if (Timers.Count() < 5) {Message += "I need at least five timers with a tag\n" + TimerTag;return;}
-    else { Message += Timers.Count().ToString() + " Timers have been setup\n if grid changes you need to reboot\n";Setupdone = true; }
+    if (TBBlocks.Count() < 5) {Message += "I need at least five timers with a tag\n" + TimerTag;return;}
+    else { Message += TBBlocks.Count().ToString() + " Timers have been setup\n if grid changes you need to reboot\n";Setupdone = true; }
     return;
 }
 public void SetupTimer(string blok)
@@ -166,7 +166,7 @@ public void CheckCustomData(IMyTerminalBlock _thisblock, string _Var)
 	// FBTimer = @25,@50, ...
 	ChckString = GetCustomDataTag(_thisblock, TimerTag);
 	// not yet tagged
-	if (ChckString != _Var) { _thisblock.CustomData = Echochars + TimerTag + "= " + _Var;}
+	if (ChckString != _Var) { _thisblock.CustomData = EchoChars + TimerTag + "= " + _Var;}
 	return;
 }
 public bool DoesNameHasTag(string Inthis, string theTag)
