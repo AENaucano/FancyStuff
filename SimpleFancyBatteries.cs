@@ -156,15 +156,16 @@ public void SetupTimer(IMyTimerBlock blok)
 		break;
 	case TBoff:
 		CheckCustomData(TBoff, TBoff_Tag);
-		if (!DoesNameHasTag(TBoff.CustomName, TimerTag)) { TBoff.CustomName += TimerTag;)}
+		if (!DoesNameHasTag(TBoff.CustomName, TimerTag)) { TBoff.CustomName += TimerTag;}
 		break;
 	}
 	return;
 }
-void CheckCustomData(IMyTerminalBlock _thisblock, string _Var)
+public string ChckString = "";
+public void CheckCustomData(IMyTerminalBlock _thisblock, string _Var)
 {
 	// FBTimer = @25,@50, ...
-	private string ChckString = GetCustomDataTag(_thisblock, TimerTag);
+	ChckString = GetCustomDataTag(_thisblock, TimerTag);
 	// not yet tagged
 	if (ChckString != _Var) { _thisblock.CustomData = Echochars + TimerTag + "= " + _Var;}
 	return;
