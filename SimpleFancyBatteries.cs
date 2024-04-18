@@ -12,15 +12,15 @@ public string ScriptTag = "FBatteries"; // name of this script
 public string TimerTag = "FBTimer"; // tag for the four timers
 public static IMyProgrammableBlock PBBlock = null;
 public static IMyTimerBlock TB25 = null; // to trigger @power > 25%
-public static TB25_Tag = "@25";
+public string TB25_Tag = "@25";
 public static IMyTimerBlock TB50 = null; // to trigger @power > 50%
-public static TB50_Tag = "@50";
+public string TB50_Tag = "@50";
 public static IMyTimerBlock TB75 = null; // to trigger @power > 75%
-public static TB75_Tag = "@75";
+public string TB75_Tag = "@75";
 public static IMyTimerBlock TB100 = null; // to trigger @power > actually 95%
-public static TB100_Tag = "@100";
+public string TB100_Tag = "@100";
 public static IMyTimerBlock TBoff = null; // triggered if power is going down ... so set off everything
-public static TBoff_Tag = "off";
+public string TBoff_Tag = "off";
 
 //special stuff
 public static IMyGridTerminalSystem MyGrid;
