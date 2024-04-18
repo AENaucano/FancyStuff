@@ -137,32 +137,29 @@ public void DoScan()
 }
 public void SetupTimer(IMyTimerBlock blok)
 {
-		switch(blok) {
-		case TB25:
-			CheckCustomData(TB25, TB25_Tag);
-			if (!DoesNameHasTag(TB25.CustomName, TimerTag)) { TB25.CustomName += TimerTag;)
-			break;
-		case TB50:
-			CheckCustomData(TB50, TB50_Tag);
-			if (!DoesNameHasTag(TB50.CustomName, TimerTag)) { TB50.CustomName += TimerTag;)
-			break;
-		case TB75:
-			CheckCustomData(TB75, TB75_Tag);
-			if (!DoesNameHasTag(TB75.CustomName, TimerTag)) { TB75.CustomName += TimerTag;)
-			break;
-		case TB100:
-			CheckCustomData(TB100, TB100_Tag);
-			if (!DoesNameHasTag(TB100.CustomName, TimerTag)) { TB100.CustomName += TimerTag;)
-			break;
-		case TBoff:
-			CheckCustomData(TBoff, TBoff_Tag);
-			if (!DoesNameHasTag(TBoff.CustomName, TimerTag)) { TBoff.CustomName += TimerTag;)
-			break;
-		// default:
-		//	Message += "°-O Wich block ?\n";
-		//	break;
-		}
-		return;
+	switch(blok) {
+	case TB25:
+		CheckCustomData(TB25, TB25_Tag);
+		if (!DoesNameHasTag(TB25.CustomName, TimerTag)) { TB25.CustomName += TimerTag;}
+		break;
+	case TB50:
+		CheckCustomData(TB50, TB50_Tag);
+		if (!DoesNameHasTag(TB50.CustomName, TimerTag)) { TB50.CustomName += TimerTag;}
+		break;
+	case TB75:
+		CheckCustomData(TB75, TB75_Tag);
+		if (!DoesNameHasTag(TB75.CustomName, TimerTag)) { TB75.CustomName += TimerTag;}
+		break;
+	case TB100:
+		CheckCustomData(TB100, TB100_Tag);
+		if (!DoesNameHasTag(TB100.CustomName, TimerTag)) { TB100.CustomName += TimerTag;}
+		break;
+	case TBoff:
+		CheckCustomData(TBoff, TBoff_Tag);
+		if (!DoesNameHasTag(TBoff.CustomName, TimerTag)) { TBoff.CustomName += TimerTag;)}
+		break;
+	}
+	return;
 }
 void CheckCustomData(IMyTerminalBlock _thisblock, string _Var)
 {
@@ -215,3 +212,4 @@ public string GetCustomDataTag(IMyTerminalBlock thisBlock, string _thisTag)
     // nothing found
 	return "";
 }  
+à
